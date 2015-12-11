@@ -1,0 +1,33 @@
+{
+  "name": "np-solo",
+  "version": "0.0.1",
+  "description": "Another private node package manager",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markgardner/np-solo.git"
+  },
+  "keywords": [
+    "private",
+    "npm"
+  ],
+  "author": "Mark Gardner",
+  "license": "MIT",
+  "bin": {
+    "npsolo": "./bin/npsolo"
+  },
+  "bugs": {
+    "url": "https://github.com/markgardner/np-solo/issues"
+  },
+  "homepage": "https://github.com/markgardner/np-solo#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "commander": "^2.9.0",
+    "express": "^4.13.3",
+    "extend": "^3.0.0",
+    "mkdirp": "^0.5.1"
+  }
+}

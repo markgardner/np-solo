@@ -1,0 +1,53 @@
+#!/usr/bin/env node
+
+process.title = 'npsolo';
+
+var fs = require('fs'),
+	path = require('path'),
+	commander = require('commander'),
+	extend = require('extend'),
+	colors = require('colors'),
+	pkg = require('../package'),
+	npSolo = require('../'),
+	configPath = path.join(process.cwd(), 'npsolo.json');
+
+commander
+	.option('-p, --port', 'Port to bind to, defaults to 9000')
+	.option('-h, --hostname', 'Hostname to bind to')
+	.version(pkg.version)
+	.parse(process.argv);
+	
+if(!fs.existsSync(configPath)) {
+	console.error(('Unable to find config file at "' + configPath + '"').red);
+	process.exit(1);
+} else {
+	var config = {
+			port: commander.port || 9000,
+			hostname: commander.hostname,
+			allowAnonymous: false,
+			storageProvider: {
+				type: 'local',
+				options: {
+					dir: './storage'
+				}
+			},
+			authProvider: {
+				type: 'simple',
+				options: {
+					users: {}
+				}
+			}
+		},
+		configFile = fs.readFileSync(configPath, 'utf8');
+		
+	try {
+		configFile = JSON.parse(configFile);
+	} catch(e) {
+		console.error(('There was a problem parsing config file, ' + e).red);
+		process.exit(1);
+	}
+	
+	extend(true, config, configFile);
+	
+	npSolo(config);
+}

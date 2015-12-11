@@ -6,7 +6,7 @@ To install execute
 npm install np-solo -g
 ```
 
-To start the registry execute in the directory of your configuration (np-solo.json) file. All paths will be relative to this location.
+To start the registry execute in the directory of your configuration (npsolo.json) file. All paths will be relative to this location.
 ```
 np-solo
 ```
@@ -44,7 +44,7 @@ np-solo.json will store all of your configuration settings. Below is a descripti
 }
 ```
 
-Example np-solo.json file:
+Example npsolo.json file:
 ```javascript
 {
 	"authProvider": {

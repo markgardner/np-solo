@@ -34,6 +34,7 @@ if(!fs.existsSync(configPath)) {
 			authProvider: {
 				type: 'simple',
 				options: {
+					hashAlgorithm: 'sha512',
 					users: {}
 				}
 			}

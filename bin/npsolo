@@ -24,8 +24,9 @@ if(!fs.existsSync(configPath)) {
 	var config = {
 			port: commander.port || 9000,
 			hostname: commander.hostname,
-			maxRequestSize: '1mb',
+			maxRequestSize: '10mb',
 			allowAnonymous: false,
+			urlPrefix: '',
 			storageProvider: {
 				type: 'local',
 				options: {

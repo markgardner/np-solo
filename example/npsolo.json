@@ -1,4 +1,6 @@
 {
+	"maxRequestSize": "5mb",
+	"urlPrefix": "/npm",
 	"authProvider": {
 		"options": {
 			"users": {

@@ -25,6 +25,10 @@ np-solo.json will store all of your configuration settings. Below is a descripti
   // options for read or write.
   // { read: true, write: false }
   allowAnonymous: false,
+  // Specifies if there should be a prefix in the express routes.
+  // Helpful for reverse proxy instances. It should not end in / unless you know why.
+  // ie /npm
+  urlPrefix: '',
   // Configure how the registry will store the json and tar files. This can be a plain object
   // that will require default providers (currently only local is supported). You can also require your
   // own class that confirms to the storage contract for specific implementations.

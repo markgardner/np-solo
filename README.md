@@ -19,6 +19,8 @@ np-solo.json will store all of your configuration settings. Below is a descripti
   port: 9000,
   // A specifc hostname or ip address to bind
   hostname: undefined,
+  // The maximum allowed size of the request body 
+  maxRequestSize: '1mb',
   // Allow unauthenticated users, this can also be an object that will have specify 
   // options for read or write.
   // { read: true, write: false }

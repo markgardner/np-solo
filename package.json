@@ -1,6 +1,6 @@
 {
   "name": "np-solo",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Another private node package manager",
   "main": "index.js",
   "scripts": {
